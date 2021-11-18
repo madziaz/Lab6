@@ -58,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        String message = "";
+        switch (id) {
+            case R.id.action_settings: message = "Settings"; break;
+            case R.id.action1: message = "Action 1"; break;
+            case R.id.action2: message = "Action 2"; break;
         }
+        Snackbar.make(findViewById(R.id.rootLayout), message, Snackbar.LENGTH_LONG).show();
 
         return super.onOptionsItemSelected(item);
     }
